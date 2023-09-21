@@ -29,6 +29,9 @@ class RocketChatChat(RocketChatBase):
     def chat_get_message(self, msg_id, **kwargs):
         return self.call_api_get("chat.getMessage", msgId=msg_id, kwargs=kwargs)
 
+    def chat_get_thread_messages(self, tmid, tlm, **kwargs):
+        return self.call_api_get("chat.getThreadMessages", tmid=tmid, tlm=tlm, kwargs=kwargs)
+
     def chat_pin_message(self, msg_id, **kwargs):
         return self.call_api_post("chat.pinMessage", messageId=msg_id, kwargs=kwargs)
 
